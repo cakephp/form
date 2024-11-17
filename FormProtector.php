@@ -271,7 +271,7 @@ class FormProtector
      *
      * @param array<string, array> $formData Form data.
      * @return array<string, array>
-     * @psalm-return array{fields: array, unlockedFields: array}
+     * @psalm-return array{fields: array, unlockedFields: list<string>}
      */
     protected function extractHashParts(array $formData): array
     {
