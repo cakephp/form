@@ -22,14 +22,18 @@
     },
     "require": {
         "php": ">=8.4",
-        "cakephp/event": "^6.0",
-        "cakephp/validation": "^6.0"
+        "cakephp/event": "6.0.*@dev",
+        "cakephp/validation": "6.0.*@dev"
     },
     "autoload": {
         "psr-4": {
             "Cake\\Form\\": "."
         }
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "extra": {
+        "branch-alias": {
+            "dev-5.next": "6.0.x-dev"
+        }
+    }
 }
