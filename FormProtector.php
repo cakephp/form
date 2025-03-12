@@ -390,9 +390,14 @@ class FormProtector
 
         $locked = [];
         foreach ($fields as $key => $value) {
-            if (is_numeric($value)) {
+            if ($value === true) {
+                $value = '1';
+            } elseif ($value === false) {
+                $value = '0';
+            } elseif (is_numeric($value)) {
                 $value = (string)$value;
             }
+
             if (!is_int($key)) {
                 $locked[$key] = $value;
                 unset($fields[$key]);
