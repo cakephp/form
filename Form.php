@@ -49,13 +49,6 @@ class Form implements EventListenerInterface, EventDispatcherInterface, Validato
     use ValidatorAwareTrait;
 
     /**
-     * Name of default validation set.
-     *
-     * @var string
-     */
-    public const string DEFAULT_VALIDATOR = 'default';
-
-    /**
      * The alias this object is assigned to validators as.
      *
      * @var string
