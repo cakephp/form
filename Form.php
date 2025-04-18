@@ -66,7 +66,7 @@ class Form implements EventListenerInterface, EventDispatcherInterface, Validato
      * Schema class.
      *
      * @var string
-     * @psalm-var class-string<\Cake\Form\Schema>
+     * @phpstan-var class-string<\Cake\Form\Schema>
      */
     protected string $_schemaClass = Schema::class;
 
