@@ -33,7 +33,7 @@ use Cake\Validation\ValidatorAwareTrait;
  *
  * This class is most useful when subclassed. In a subclass you
  * should define the `_buildSchema`, `validationDefault` and optionally,
- * the `_execute` methods. These allow you to declare your form's
+ * the `process` methods. These allow you to declare your form's
  * fields, validation and primary action respectively.
  *
  * Forms are conventionally placed in the `App\Form` namespace.
@@ -236,7 +236,7 @@ class Form implements EventListenerInterface, EventDispatcherInterface, Validato
     /**
      * Execute the form if it is valid.
      *
-     * First validates the form, then calls the `_execute()` hook method.
+     * First validates the form, then calls the `process()` hook method.
      * This hook method can be implemented in subclasses to perform
      * the action of the form. This may be sending email, interacting
      * with a remote API, or anything else you may need.
@@ -249,12 +249,11 @@ class Form implements EventListenerInterface, EventDispatcherInterface, Validato
      * @param array $data Form data.
      * @param array<string, mixed> $options List of options.
      * @return bool False on validation failure, otherwise returns the
-     *   result of the `_execute()` method.
+     *   result of the `process()` method.
      */
     public function execute(array $data, array $options = []): bool
     {
         $this->_data = $data;
-
         $options += ['validate' => true];
 
         if ($options['validate'] === false) {
